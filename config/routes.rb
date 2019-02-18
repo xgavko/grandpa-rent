@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'elders#index'
+
+  resources :elders, only: [:show, :new, :create, :edit, :update, :destroy] do
+    resources :rents, only: [:create]
+  end
+
+  resources :rents, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
+
 end
