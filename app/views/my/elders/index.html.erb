@@ -4,6 +4,7 @@
   <hr>
   <% @elders.each do |elder| %>
     <div>
+      <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill %>
       <%= elder.full_name %>
       <br>
       <%= elder.address %>

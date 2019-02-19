@@ -7,4 +7,6 @@ class Elder < ApplicationRecord
 
   validates :full_name, presence: true, uniqueness: true
   validates :address, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end
