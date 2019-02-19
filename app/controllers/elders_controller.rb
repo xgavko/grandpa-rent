@@ -4,4 +4,11 @@ class EldersController < ApplicationController
   def index
     @elders = Elder.all
   end
+
+
+  def show
+    @elder = Elder.find(params[:id])
+    @rent = Rent.new
+
+  end
 end
