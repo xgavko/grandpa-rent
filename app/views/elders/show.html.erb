@@ -16,9 +16,9 @@
         <div class="elder-skills">
           <h4><%=@elder.full_name%>'s skills and knowledges</h3>
           <ul class="skills-list">
-            <% @elder_skills.each do |skill| %>
+            <% @elder.skills.each do |skill| %>
             <li>
-              <%= skill.skill.name %>
+              <%= skill.name %>
             </li>
             <% end %>
           </ul>

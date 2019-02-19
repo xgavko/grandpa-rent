@@ -8,6 +8,6 @@ class EldersController < ApplicationController
   def show
     @elder = Elder.find(params[:id])
     @rent = Rent.new
-    @elder_skills = @elder.elder_skills
+
   end
 end
