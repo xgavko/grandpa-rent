@@ -18,6 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
 
+# protection for images
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
