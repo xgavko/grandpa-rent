@@ -8,11 +8,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.circular-landscape {
+  display: inline-block;
+  position: relative;
+  width: 50px;
   height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.circular-landscape img {
+  width: 100%;
+  height: auto;
 }
 
 /* User Avatar */
