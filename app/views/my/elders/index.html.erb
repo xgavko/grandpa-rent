@@ -1,0 +1,21 @@
+<div class="container text-center">
+  <h1>My Elders to manage</h1>
+  <%= link_to 'Add an Elder', new_my_elder_path %>
+  <hr>
+  <% @elders.each do |elder| %>
+    <div>
+      <%= elder.full_name %>
+      <br>
+      <%= elder.address %>
+      <br>
+      <%= elder.description %>
+      <br>
+      <% elder.skills.each do |skill| %>
+        <%= skill.name %>
+      <% end %>
+      <br>
+      <%= link_to 'Edit this Elder', edit_my_elder_path(elder) %>
+      <%= link_to 'Destroy this Elder', my_elder_path(elder), method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"} %>
+    </div>
+  <% end %>
+</div>
