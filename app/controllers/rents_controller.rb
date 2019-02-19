@@ -1,5 +1,4 @@
 class RentsController < ApplicationController
-
   def new
     @elder = Elder.find(params[:elder_id])
     @rent = Rent.new
@@ -8,11 +7,15 @@ class RentsController < ApplicationController
   def create
     @rent = Rent.new(rent_params)
     @rent.elder = Elder.find(params[:elder_id])
+    @rent.user = current_user
     if @rent.save
       redirect_to elder_path(params[:elder_id])
     else
-      render :new
+      render :show
     end
   end
 
+  def rent_params
+    params.require(:rent).permit(:start_date, :end_date)
+  end
 end
