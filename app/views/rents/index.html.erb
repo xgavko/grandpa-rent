@@ -1,78 +1,19 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Inbox - Message design</title>
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-
-  <body>
-
-    <div class="container">
-
-      <h1>Your messages</h1>
-        <div class="tabs">
-          <a href="#" class="tab active">Renting</a>
-          <a href="#" class="tab">Rewiews</a>
-         </div>
-
-      <ul class="inbox">
-        <li class="message">
-         <img src="images/cecile.png" alt class="avatar">
-
-          <div class = "message-name">
-            <h3>Bébère</h3>
-            <p>03/02/19</p>
-          </div>
-
-          <div class="message-body">
-            <p> <strong>Description</strong> </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolore id ipsum dolores impedit ut deleniti omnis debitis aspernatur molestias. Impedit delectus quo consequatur, quasi rerum sint. Neque, doloremque, voluptas.</p>
-          </div>
-
-          <div class="message-status">
-            <p class="status pending">Pending</p>
-            <p class="price">150€</p>
-          </div>
-          </li>
-
-          <li class="message">
-          <img src="images/jad.png" alt class="avatar">
-          <div class = "message-name">
-            <h3>Nanard</h3>
-            <p>23/09/17</p>
-          </div>
-
-          <div class="message-body">
-            <p> <strong>Description</strong> </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolore id ipsum dolores impedit ut deleniti omnis debitis aspernatur molestias. Impedit delectus quo consequatur, quasi rerum sint. Neque, doloremque, voluptas.</p>
-          </div>
-
-          <div class="message-status">
-            <p class="status pending">Pending</p>
-            <p class="price">200€</p>
-          </div>
-          </li>
-
-           <li class="message">
-          <img src="images/gab.png" alt class="avatar">
-          <div class = "message-name">
-            <h3>Georges</h3>
-            <p>23/02/19</p>
-          </div>
-
-          <div class="message-body">
-            <p> <strong>Description </strong> </p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dolore id ipsum dolores impedit ut deleniti omnis debitis aspernatur molestias. Impedit delectus quo consequatur, quasi rerum sint. Neque, doloremque, voluptas.</p>
-          </div>
-
-          <div class="message-status">
-            <p class="status pending">Pending</p>
-            <p class="price">200€</p>
-          </div>
-        </li>
-      </ul>
+<% @rents.each do |rent| %>
+  <div class="message">
+    <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+      <div class="message-name">
+          <h3> Michel </h3>
+          <p>10/07/17</p>
+          <button> <%= link_to "Add a review", new_rent_review_path(rent) %></button>
+      </div>
+      <div class="message-body">
+          <p><strong>I am not sure yet!</strong></p>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus impedit, a molestiae rerum non suscipit minus tenetur, reprehenderit ratione, delectus laudantium. Doloremque perspiciatis accusantium eos laborum enim eveniet ratione odio.
+          </p>
+      </div>
+      <div class="message-status">
+        <p class="status pending">Pending</p>
+        <p class="price">€345</p>
     </div>
-  </body>
-</html>
+  </div>
+<% end %>

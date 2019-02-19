@@ -1,20 +1,22 @@
 class ReviewsController < ApplicationController
-
   def new
-    @review = Review.new
+    @rent = Rent.find(params[:rent_id])
   end
 
   def create
-    @review = Review.new(rent_params)
-    @rent = Rent.find(params[:rent_review])
-
-    @dose = Dose.new(dose_params)
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @dose.cocktail = @cocktail
-      if @dose.save
-        redirect_to cocktail_path(@cocktail)
-      else
-        render :new
+    @rent = Rent.find(params[:rent_id])
+    @rent.update(review_params)
+    if @rent.save
+      redirect_to rents_path
+    else
+      render :new
     end
+  end
+
+  private
+
+  def review_params
+    # TODO : Update this
+    params.require(:rent).permit(:review, :rating)
   end
 end
