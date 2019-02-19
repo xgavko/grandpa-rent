@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   namespace :my do
     resources :elders, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-    # resources :rents, only: [:index, :show] do
+    resources :rents, only: [:index, :show]
+    # do
     #   resources :confirmeds, [:create]
     #   resources :declineds, [:create]
     # end
