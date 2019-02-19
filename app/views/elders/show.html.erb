@@ -1,0 +1,43 @@
+<h1>Details: <%=@elder.full_name%></h1>
+
+<div class="content-block">
+  <div class="content-inner">
+    <div class="entry-content elder-content-wrapper">
+      <div class="elder-single-photo">
+        <img src="https://as2.ftcdn.net/jpg/00/51/42/23/500_F_51422324_qxtvWjZY01sEcMxhYHVbYBGxnE5szEig.jpg" alt="papy sympa">
+      </div>
+      <div class="elder-specs-wrapper">
+        <div class="elder-description">
+          <p>Name: <%=  @elder.full_name%><p>
+          <p>Address: <%= @elder.address %></p>
+          <p><%= @elder.description %></p>
+
+        </div>
+        <div class="elder-skills">
+          <h4><%=@elder.full_name%>'s skills and knowledges</h3>
+          <ul class="skills-list">
+            <% @elder.skills.each do |skill| %>
+            <li>
+              <%= skill.name %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="form-inline">
+          <%= simple_form_for [@elder, @rent] do |f| %>
+          <%= f.input :start_date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 2,
+                              order: [:day, :month, :year]%>
+          <%= f.input :end_date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 2,
+                              order: [:day, :month, :year] %>
+          <%= f.button :submit, {class: "btn btn-primary btn-sm"}%>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="reviews">
+  Show all the reviews
+</div>
