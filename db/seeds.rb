@@ -21,17 +21,11 @@ e.save!
 d1 = Date.new(2019, 4, 1)
 d2 = Date.new(2019, 4, 5)
 
-r = Rent.new(start_date: d1, end_date: d2)
-r.user = User.find(2)
-r.elder = Elder.first
+r = Rent.new(start_date: d1, end_date: d2, user: User.first, elder: Elder.first, rating: Random.rand(0..5) )
 r.save!
-r = Rent.new(start_date: d1, end_date: d2)
-r.user = User.first
-r.elder = Elder.find(2)
+r = Rent.new(start_date: d1, end_date: d2, user: User.last, elder: Elder.last, rating: Random.rand(0..5))
 r.save!
-r = Rent.new(start_date: d1, end_date: d2)
-r.user = User.last
-r.elder = Elder.first
+r = Rent.new(start_date: d1, end_date: d2, user: User.first, elder: Elder.last, rating: Random.rand(0..5))
 r.save!
 
 puts 'The end'

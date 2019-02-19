@@ -1,4 +1,7 @@
 class RentsController < ApplicationController
+  def index
+    @rents = Rent.where(user: current_user)
+  end
 
   def new
     @elder = Elder.find(params[:elder_id])

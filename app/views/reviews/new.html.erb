@@ -1,0 +1,8 @@
+
+<h1>Qu'avez vous pensez de ? </h1>
+
+<%= simple_form_for @rent, url: rent_reviews_path(@rent), method: :post do |f| %>
+  <%= f.input :review %>
+  <%= f.input :rating, collection: 0..5%>
+  <%= f.button :submit %>
+<% end %>
