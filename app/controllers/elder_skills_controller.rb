@@ -1,5 +1,0 @@
-class ElderSkillsController < ApplicationController
-
-
-
-end
