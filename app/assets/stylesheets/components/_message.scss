@@ -1,0 +1,29 @@
+.inbox {
+  border: 1px solid #dce0e0;
+  padding-left: 0 20px;
+  list-style: none;
+  margin: 0;
+}
+.message {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.message-name {
+    padding-left: 10px;
+    min-width: 100px;
+}
+.message-body {
+    padding-left: 10px;
+    min-width: 100px;
+}
+
+.message-status {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status.pending {
+    color: lightgrey;
+}
