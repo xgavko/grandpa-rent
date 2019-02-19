@@ -12,9 +12,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "My Elders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Elders", my_elders_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Rents Requests", rents_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Manage My Rents", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Manage My Rents", my_rents_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
