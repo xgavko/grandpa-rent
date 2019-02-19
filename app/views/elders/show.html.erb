@@ -1,0 +1,27 @@
+<h1>Details: <%=@elder.full_name%></h1>
+
+<div class="content-block">
+  <div class="content-inner">
+    <div class="entry-content elder-content-wrapper">
+      <div class="elder-single-photo">
+        <img src="https://as2.ftcdn.net/jpg/00/51/42/23/500_F_51422324_qxtvWjZY01sEcMxhYHVbYBGxnE5szEig.jpg" alt="papy sympa">
+      </div>
+      <div class="elder-specs-wrapper">
+        <div class="elder-description">
+          <h2><%=  @elder.full_name%></h2>
+
+        </div>
+        <div class="elder-skills">
+          <ul class="skills-list">
+            <%# @skills_elders.each do |skill| %>
+            <li>
+
+            </li>
+            <%# end %>
+          </ul>
+        </div>
+        <%= link_to "Back to main", root_path, class: "btn btn-primary btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,4 +3,10 @@ class EldersController < ApplicationController
 
   def index
   end
+
+
+  def show
+    @elder = Elder.find(params[:id])
+    @elder_skills = @elder.elder_skills
+  end
 end
