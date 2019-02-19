@@ -10,7 +10,7 @@
         <div class="elder-description">
           <p>Name: <%=  @elder.full_name%><p>
           <p>Address: <%= @elder.address %></p>
-          <p>Address: <%= @elder.description %></p>
+          <p><%= @elder.description %></p>
 
         </div>
         <div class="elder-skills">
@@ -23,9 +23,18 @@
             <% end %>
           </ul>
         </div>
-        <%= link_to "Back to main", root_path, class: "btn btn-primary btn-sm" %>
+        <div class="form-inline">
+          <%= simple_form_for [@elder, @rent] do |f| %>
+          <%= f.input :start_date%>
+          <%= f.input :end_date %>
+          <%= f.button :submit %>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="reviews"></div>
+<div class="reviews">
+  Show all the reviews
+</div>
+<%= link_to "Back to main", root_path, class: "btn btn-primary btn-sm" %>
