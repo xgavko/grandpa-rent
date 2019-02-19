@@ -8,16 +8,19 @@
       </div>
       <div class="elder-specs-wrapper">
         <div class="elder-description">
-          <h2><%=  @elder.full_name%></h2>
+          <p>Name: <%=  @elder.full_name%><p>
+          <p>Address: <%= @elder.address %></p>
+          <p>Address: <%= @elder.description %></p>
 
         </div>
         <div class="elder-skills">
+          <h4>What book <%=@elder.full_name%> for?</h3>
           <ul class="skills-list">
-            <%# @skills_elders.each do |skill| %>
+            <% @elder_skills.each do |skill| %>
             <li>
-
+              <%= skill.skill.name %>
             </li>
-            <%# end %>
+            <% end %>
           </ul>
         </div>
         <%= link_to "Back to main", root_path, class: "btn btn-primary btn-sm" %>
