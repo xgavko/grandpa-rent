@@ -1,0 +1,23 @@
+<div class="container text-center">
+  <h1>Bookings on my elders</h1>
+  <hr>
+  <% @bookings.each do |booking| %>
+    <div class="message">
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+            <h3><%= booking.elder.full_name %></h3>
+            <p>Start: <%= booking.start_date %></p>
+            <p>End: <%= booking.end_date %></p>
+        </div>
+        <div class="message-body">
+            <p><strong>Description of you Old Thing:</strong></p>
+            <p>
+              <%= booking.elder.description %>
+            </p>
+        </div>
+        <div class="message-status">
+          <p class="status pending">Status to implement</p>
+      </div>
+    </div>
+  <% end %>
+</div>

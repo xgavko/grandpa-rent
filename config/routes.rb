@@ -6,13 +6,13 @@ Rails.application.routes.draw do
     resources :rents, only: [:create]
   end
 
-  resources :rents, only: [:index, :show] do
+  resources :rents, only: [:index] do
     resources :reviews, only: [:new, :create]
   end
 
   namespace :my do
     resources :elders, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-    resources :rents, only: [:index, :show]
+    resources :rents, only: [:index]
     # do
     #   resources :confirmeds, [:create]
     #   resources :declineds, [:create]

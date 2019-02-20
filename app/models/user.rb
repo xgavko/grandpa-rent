@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :elders
   has_many :elders, through: :rents
 
+  has_many :bookings, through: :elders, source: :rents
+
   validates :first_name, presence: true
   validates :last_name, presence: true
 end
