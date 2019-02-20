@@ -1,15 +1,18 @@
-<h1>The Elders I Manage</h1>
-<%= link_to 'Add an Elder', new_my_elder_path %>
-<hr>
+<div>
+  <h1>Manage my Elders</h1>
+
+  <%= link_to 'Add an Elder', new_my_elder_path, class: "btn btn-primary" %>
+  <hr>
+</div>
 
 <div class="container">
   <% @elders.each do |elder| %>
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="col-xs-12 col-sm-6">
         <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill %>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="col-xs-12 col-sm-6">
         <div class="card">
           <div class="card-description">
             <h2><%= elder.full_name %></h2>
@@ -19,8 +22,8 @@
             <% end %>
             </div>
 
-          <%= link_to 'Edit this Elder', edit_my_elder_path(elder), class: "btn btn-info" %>
-          <%= link_to 'Destroy this Elder', my_elder_path(elder), method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"}, class: "btn btn-danger" %>
+          <%= link_to 'Edit this Elder', edit_my_elder_path(elder), class: "btn btn-primary" %>
+          <%= link_to 'Destroy this Elder', my_elder_path(elder), method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"}, class: "btn btn-primary" %>
 
         </div>
       </div>
