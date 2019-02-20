@@ -9,13 +9,17 @@
   <div class="row">
     <% @elders.each do |elder| %>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>')">
-          <div class="card-description">
-            <h2><%= elder.full_name %></h2>
-            <p><%= elder.address %></p>
-          </div>
+        <% if elder.photo.file %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>);">
+        <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://ak4.picdn.net/shutterstock/videos/5431364/thumb/1.jpg?i10c=img.resize(height:175);">
+        <% end %>
+            <div class="card-description">
+              <h2><%= elder.full_name %></h2>
+              <p><%= elder.address %></p>
+            </div>
           <%= link_to "", elder_path(elder), class: "card-link" %>
-        </div>
+          </div>
       </div>
     <% end %>
   </div>
