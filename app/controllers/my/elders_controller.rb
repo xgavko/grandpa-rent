@@ -39,6 +39,6 @@ class My::EldersController < ApplicationController
   end
 
   def elder_params
-    params.require(:elder).permit(:full_name, :address, :description, skill_ids: [])
+    params.require(:elder).permit(:full_name, :address, :description, :photo, skill_ids: [])
   end
 end

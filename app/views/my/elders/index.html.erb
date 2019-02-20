@@ -1,21 +1,29 @@
-<div class="container text-center">
-  <h1>My Elders to manage</h1>
-  <%= link_to 'Add an Elder', new_my_elder_path %>
-  <hr>
+<h1>The Elders I Manage</h1>
+<%= link_to 'Add an Elder', new_my_elder_path %>
+<hr>
+
+<div class="container">
   <% @elders.each do |elder| %>
-    <div>
-      <%= elder.full_name %>
-      <br>
-      <%= elder.address %>
-      <br>
-      <%= elder.description %>
-      <br>
-      <% elder.skills.each do |skill| %>
-        <%= skill.name %>
-      <% end %>
-      <br>
-      <%= link_to 'Edit this Elder', edit_my_elder_path(elder) %>
-      <%= link_to 'Destroy this Elder', my_elder_path(elder), method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"} %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill %>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <div class="card-description">
+            <h2><%= elder.full_name %></h2>
+            <p><%= elder.address %></p>
+            <% elder.skills.each do |skill| %>
+              <%= skill.name %>
+            <% end %>
+            </div>
+
+          <%= link_to 'Edit this Elder', edit_my_elder_path(elder), class: "btn btn-info" %>
+          <%= link_to 'Destroy this Elder', my_elder_path(elder), method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"}, class: "btn btn-danger" %>
+
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
