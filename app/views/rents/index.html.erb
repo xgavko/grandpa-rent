@@ -1,9 +1,13 @@
 <h1>My Rents</h1>
 
 <% @rents.each do |rent| %>
-  <div class="message">
-    <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
+  <div class="message" >
+
+      <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <% elder = Elder.find(rent.elder_id) %>
+        <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill %>
+      </div>
 
       </div>
       <div class="message-body">
@@ -16,7 +20,7 @@
           <button> <%= link_to "Add a review", new_rent_review_path(rent) %></button>
       </div>
       <div class="message-status">
-        <p class="status pending">Pending</p>
+        <p class="status pending"> <%= rent.status %></p>
     </div>
   </div>
 <% end %>
