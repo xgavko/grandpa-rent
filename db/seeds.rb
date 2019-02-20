@@ -1,6 +1,7 @@
 Rent.destroy_all
 Elder.destroy_all
 User.destroy_all
+Skill.destroy_all
 
 puts 'Start seed'
 
@@ -8,24 +9,48 @@ me = User.create!(first_name: 'Benoit', last_name: 'Calin', email: 'benoit.cal@g
 u2 = User.create!(first_name: 'Xeniia', last_name: 'Gavr', email: 'xeniia.g@grandpa-rent.com', password:'123soleil')
 u3 = User.create!(first_name: 'Kenza', last_name: 'Ahed', email: 'kenza.a@grandpa-rent.com', password:'123soleil')
 
-elder1 = Elder.new(full_name: 'Bébère', address: 'EPHAD n°1, Bordeaux')
+skill1 = Skill.new(name: 'water plants')
+skill1.save!
+skill2 = Skill.new(name: 'yells at the neigboors')
+skill2.save!
+skill3 = Skill.new(name: 'racist')
+skill3.save!
+skill4 = Skill.new(name: 'war stories')
+skill4.save!
+skill5 = Skill.new(name: 'goes to the loo alone')
+skill5.save!
+
+
+elder1 = Elder.new(full_name: 'Bébère', address: '50 Cours du Médoc, Bordeaux') #, photo: cl_image_tag("sezjazxi50cb8ekvq9jf.jpg"))
 elder1.user = me
 elder1.save!
-elder2 = Elder.new(full_name: 'Nanard', address: 'EPHAD n°3, Bordeaux')
-elder2.user = User.last
+elder2 = Elder.new(full_name: 'Nanard', address: 'EHPAD Maryse BASTIE, Rue Maryse Bastié, Bordeaux') # , photo: cl_image_tag("ad614ddwypvjsvrontev.jpg"))
+elder2.user = u2
 elder2.save!
-elder3 = Elder.new(full_name: 'Georges', address: 'EPHAD n°2, Bordeaux')
-elder3.user = User.last
+elder3 = Elder.new(full_name: 'Bernadette', address: 'EPHAD n°2, Bordeaux') #, photo: cl_image_tag("6992d663b5e5956a221f9e840ba7d623.jpg"))
+elder3.user = u3
 elder3.save!
+elder4 = Elder.new(full_name: 'Mamie Rose', address: '2 Rue Poyenne, Bordeaux') # , photo: cl_image_tag("51283453ecb388d16f1185ceb6f46922--love-her-i-love.jpg"))
+elder4.user = u3
+elder4.save!
+
+elder_skill1 = ElderSkill.new(elder: elder1, skill: skill4)
+elder_skill1.save!
+elder_skill2 = ElderSkill.new(elder: elder3, skill: skill1)
+elder_skill2.save!
+elder_skill3 = ElderSkill.new(elder: elder2, skill: skill3)
+elder_skill3.save!
+elder_skill4 = ElderSkill.new(elder: elder2, skill: skill5)
+elder_skill4.save!
 
 d1 = Date.new(2019, 4, 1)
 d2 = Date.new(2019, 4, 5)
 
-r = Rent.new(start_date: d1, end_date: d2, user: me, elder: elder2, rating: Random.rand(0..5) )
-r.save!
-r = Rent.new(start_date: d1, end_date: d2, user: u2, elder: elder3, rating: Random.rand(0..5))
-r.save!
-r = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder1, rating: Random.rand(0..5))
-r.save!
+r1 = Rent.new(start_date: d1, end_date: d2, user: me, elder: elder2, rating: Random.rand(0..5) )
+r1.save!
+r2 = Rent.new(start_date: d1, end_date: d2, user: u2, elder: elder3, rating: Random.rand(0..5))
+r2.save!
+r3 = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder1, rating: Random.rand(0..5))
+r3.save!
 
 puts 'The end'
