@@ -16,7 +16,14 @@
             </p>
         </div>
         <div class="message-status">
-          <p class="status pending">Status to implement</p>
+          <p class="status pending">Status: <%= booking.status %>
+            <%= link_to my_rent_confirmeds_path(booking), method: :post do %>
+              <button class="btn btn-success">Confirm</button>
+            <% end %>
+            <%= link_to my_rent_declineds_path(booking), method: :post do %>
+              <button class="btn btn-danger">Decline</button>
+            <% end %>
+          </p>
       </div>
     </div>
   <% end %>
