@@ -5,7 +5,7 @@
     <div class="entry-content elder-content-wrapper">
       <div class="elder-single-photo">
         <% if @elder.photo.file %>
-          <%= cl_image_tag @elder.photo, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag @elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
         <% else %>
           <%= image_tag("https://ak4.picdn.net/shutterstock/videos/5431364/thumb/1.jpg?i10c=img.resize(height:150)") %>
         <% end %>

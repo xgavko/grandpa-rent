@@ -21,17 +21,28 @@ skill5 = Skill.new(name: 'goes to the loo alone')
 skill5.save!
 
 
-elder1 = Elder.new(full_name: 'Bébère', address: '50 Cours du Médoc, Bordeaux') #, photo: cl_image_tag("sezjazxi50cb8ekvq9jf.jpg"))
+url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550597033/sezjazxi50cb8ekvq9jf.jpg"
+elder1 = Elder.new(full_name: 'Bébère', address: '50 Cours du Médoc, Bordeaux')
 elder1.user = me
+elder1.remote_photo_url = url
 elder1.save!
-elder2 = Elder.new(full_name: 'Nanard', address: 'EHPAD Maryse BASTIE, Rue Maryse Bastié, Bordeaux') # , photo: cl_image_tag("ad614ddwypvjsvrontev.jpg"))
+
+url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550666936/ad614ddwypvjsvrontev.jpg"
+elder2 = Elder.new(full_name: 'Nanard', address: 'EHPAD Maryse BASTIE, Rue Maryse Bastié, Bordeaux')
 elder2.user = u2
+elder2.remote_photo_url = url
 elder2.save!
-elder3 = Elder.new(full_name: 'Bernadette', address: 'EPHAD n°2, Bordeaux') #, photo: cl_image_tag("6992d663b5e5956a221f9e840ba7d623.jpg"))
+
+url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550670570/Grand_me%CC%80re.jpg"
+elder3 = Elder.new(full_name: 'Bernadette', address: 'EPHAD n°2, Bordeaux')
 elder3.user = u3
+elder3.remote_photo_url = url
 elder3.save!
-elder4 = Elder.new(full_name: 'Mamie Rose', address: '2 Rue Poyenne, Bordeaux') # , photo: cl_image_tag("51283453ecb388d16f1185ceb6f46922--love-her-i-love.jpg"))
+
+url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550593784/51283453ecb388d16f1185ceb6f46922--love-her-i-love.jpg"
+elder4 = Elder.new(full_name: 'Mamie Rose', address: '2 Rue Poyenne, Bordeaux')
 elder4.user = u3
+elder4.remote_photo_url = url
 elder4.save!
 
 elder_skill1 = ElderSkill.new(elder: elder1, skill: skill4)
