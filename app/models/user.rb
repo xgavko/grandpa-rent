@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :rents
   has_many :elders
-  has_many :elders, through: :rents
 
   has_many :bookings, through: :elders, source: :rents
 

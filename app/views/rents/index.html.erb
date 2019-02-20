@@ -4,18 +4,21 @@
   <div class="message">
     <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
       <div class="message-name">
-          <h3> Michel </h3>
-          <p>10/07/17</p>
-          <button> <%= link_to "Add a review", new_rent_review_path(rent) %></button>
+
       </div>
       <div class="message-body">
-          <p><strong>I am not sure yet!</strong></p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus impedit, a molestiae rerum non suscipit minus tenetur, reprehenderit ratione, delectus laudantium. Doloremque perspiciatis accusantium eos laborum enim eveniet ratione odio.
-          </p>
+        <h3>
+            <% elder = Elder.find(rent.elder_id) %>
+            <%= elder.full_name %>
+          </h3>
+          <p> Loué de <%= rent.start_date %> à <%= rent.end_date %></p>
+
+          <button> <%= link_to "Add a review", new_rent_review_path(rent) %></button>
       </div>
       <div class="message-status">
         <p class="status pending">Pending</p>
-        <p class="price">€345</p>
     </div>
   </div>
 <% end %>
+
+
