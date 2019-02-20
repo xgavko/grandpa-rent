@@ -10,12 +10,13 @@ class RentsController < ApplicationController
 
   def create
     @rent = Rent.new(rent_params)
-    @rent.elder = Elder.find(params[:elder_id])
+    @elder = Elder.find(params[:elder_id])
+    @rent.elder = @elder
     @rent.user = current_user
     if @rent.save
       redirect_to rents_path
     else
-      render :show
+      render 'elders/show'
     end
   end
 
