@@ -7,4 +7,6 @@ class Rent < ApplicationRecord
   validates_datetime :end_date, after: :start_date
   validates_datetime :start_date, after: DateTime.now
   validates :rating, inclusion: { in: [0, 1, 2, 3, 4, 5] }
+
+  enum status: { pending: 0, confirmed: 1, declined: 2 }
 end
