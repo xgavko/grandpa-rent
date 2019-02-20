@@ -6,7 +6,7 @@
       <div class="row">
       <div class="col-xs-12 col-sm-6">
         <% elder = Elder.find(rent.elder_id) %>
-        <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill %>
+        <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill , class: "avatar-large"  %>
       </div>
 
       </div>
