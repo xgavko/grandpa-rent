@@ -2,13 +2,14 @@ class EldersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @elders = Elder.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @elders = Elder.near(params[:query], 15)
+    else
+      @elders = Elder.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @elders.map do |elder|
-      {
-        lng: elder.longitude,
-        lat: elder.latitude
-      }
+      { lng: elder.longitude, lat: elder.latitude }
     end
   end
 
