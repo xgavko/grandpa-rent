@@ -3,27 +3,32 @@
   <hr>
   <% @bookings.each do |booking| %>
     <div class="message">
-        <div class="message-name">
-            <h3><%= booking.elder.full_name %></h3>
-            <p>Start: <%= booking.start_date %></p>
-            <p>End: <%= booking.end_date %></p>
-        </div>
-        <div class="message-body">
-            <p><strong>Description of you Old Thing:</strong></p>
-            <p>
-              <%= booking.elder.description %>
-            </p>
-        </div>
-        <div class="message-status">
-          <p class="status pending">Status: <%= booking.status %>
-            <%= link_to my_rent_confirmeds_path(booking), method: :post do %>
-              <button class="btn btn-success">Confirm</button>
-            <% end %>
-            <%= link_to my_rent_declineds_path(booking), method: :post do %>
-              <button class="btn btn-danger">Decline</button>
-            <% end %>
+      <div class="message-name">
+          <h3><%= booking.elder.full_name %></h3>
+          <p>Start: <%= booking.start_date %></p>
+          <p>End: <%= booking.end_date %></p>
+      </div>
+      <div class="message-body">
+          <p><strong>Description of you Old Thing:</strong></p>
+          <p>
+            <%= booking.elder.description %>
           </p>
       </div>
+
+      <div class="confirmation">
+        <div class="message-status">
+            Status: <%= booking.status %>
+        </div>
+        <div >
+          <%= link_to my_rent_confirmeds_path(booking), method: :post, class: "confirmation-btn" do %>
+            <button class="btn btn-success" value="">Confirm</button>
+          <% end %>
+          <%= link_to my_rent_declineds_path(booking), method: :post, class: "decline-btn" do %>
+            <button class="btn btn-danger" value="">Decline</button>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   <% end %>
 </div>
