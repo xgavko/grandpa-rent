@@ -19,16 +19,26 @@
 
       <% @elders.each do |elder| %>
         <div class="col-xs-12 col-sm-6 col-md-4 card">
+
           <div class="card-body">
-            <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>);">
-            </div>
-            <%= link_to "", elder_path(elder), class: "card-link" %>
-            <div class="footer">
-              <ul class="list-inline">
-                <li> <%= elder.full_name %></li>
-                <li>Rating ⭐️</li>
-              </ul>
-            </div>
+            <div class="card-tags">
+                <% elder.skills.each do |skill| %>
+                  <div class="card_tag">
+                    <p><%= skill.name %></p>
+                  </div>
+                <% end %>
+              </div>
+            <%= link_to elder_path(elder) do %>
+              <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>);">
+
+              </div>
+            <% end %>
+              <div class="card-footer">
+                <ul class="list-inline">
+                  <li class="name"> <%= elder.full_name %></li>
+                  <li>Rating ⭐️</li>
+                </ul>
+              </div>
           </div>
         </div>
       <% end %>
