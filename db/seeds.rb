@@ -9,15 +9,15 @@ me = User.create!(first_name: 'Benoit', last_name: 'Calin', email: 'benoit.cal@g
 u2 = User.create!(first_name: 'Xeniia', last_name: 'Gavr', email: 'xeniia.g@grandpa-rent.com', password:'123soleil')
 u3 = User.create!(first_name: 'Kenza', last_name: 'Ahed', email: 'kenza.a@grandpa-rent.com', password:'123soleil')
 
-skill1 = Skill.new(name: 'water plants')
+skill1 = Skill.new(name: 'Water plants')
 skill1.save!
-skill2 = Skill.new(name: 'yells at the neigboors')
+skill2 = Skill.new(name: 'Yells at the neigboors')
 skill2.save!
-skill3 = Skill.new(name: 'racist')
+skill3 = Skill.new(name: 'Racist')
 skill3.save!
-skill4 = Skill.new(name: 'war stories')
+skill4 = Skill.new(name: 'War stories')
 skill4.save!
-skill5 = Skill.new(name: 'goes to the loo alone')
+skill5 = Skill.new(name: 'Goes to the loo alone')
 skill5.save!
 
 
@@ -28,13 +28,13 @@ elder1.remote_photo_url = url
 elder1.save!
 
 url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550666936/ad614ddwypvjsvrontev.jpg"
-elder2 = Elder.new(full_name: 'Nanard', address: 'EHPAD Maryse BASTIE, Rue Maryse Bastié, Bordeaux')
+elder2 = Elder.new(full_name: 'Nanard', address: '2 Rue Maryse Bastié, Bordeaux')
 elder2.user = u2
 elder2.remote_photo_url = url
 elder2.save!
 
 url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550670570/Grand_me%CC%80re.jpg"
-elder3 = Elder.new(full_name: 'Bernadette', address: 'EPHAD n°2, Bordeaux')
+elder3 = Elder.new(full_name: 'Bernadette', address: '8 cours de la Martinique, Bordeaux')
 elder3.user = u3
 elder3.remote_photo_url = url
 elder3.save!

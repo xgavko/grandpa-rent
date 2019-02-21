@@ -2,9 +2,9 @@
   <%= f.input :full_name, label: 'Your Elder should have an uniq full_name', error: 'Please read the abovementionned criteria' %>
   <%= f.input :address, label: 'We should be able to locate you Elder', error: 'Please read the abovementionned criteria' %>
   <%= f.input :description, label: 'Could be nice to describe this old thing' %>
-  <%= f.input :photo, label: "Add a picture" %>
+  <%= f.input :photo, label: 'Add a picture' %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :skills, collection: Skill.all, input_html: {multiple: true, class: "select2"}, include_hidden: false, label: 'Why should I pick your Elder?' %>
+  <%= f.input :skills, collection: Skill.all, input_html: {multiple: true, class: 'select2'}, include_hidden: false, label: 'Why should I pick your Elder?' %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 
