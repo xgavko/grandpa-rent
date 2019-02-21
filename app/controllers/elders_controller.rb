@@ -1,6 +1,7 @@
 class EldersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-layout 'layout_home', :only => [:index]
+  layout 'layout_home', :only => [:index]
+
   def index
     if params[:query].present?
       @elders = Elder.near(params[:query], 15)
