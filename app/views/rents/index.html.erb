@@ -20,7 +20,13 @@
           <button> <%= link_to "Add a review", new_rent_review_path(rent) %></button>
       </div>
       <div class="message-status">
-        Status: <%= rent.status %>
+        <% if rent.status.capitalize == 'Declined' %>
+          <p class='declined'><%= rent.status %></p>
+        <% elsif rent.status.capitalize == 'Confirmed' %>
+          <p class="confirmed"><%= rent.status %></p>
+        <% else %>
+          <p class="pending"><%= rent.status %></p>
+        <% end %>
     </div>
   </div>
 <% end %>
