@@ -1,6 +1,6 @@
 class EldersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-
+layout 'layout_home', :only => [:index]
   def index
     @elders = Elder.all
   end
