@@ -1,7 +1,18 @@
 .container-show {
-display: flex;
-justify-content: space-between;
-align-items: center;
+  margin-top: 120px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2px;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .elder-single-photo{
@@ -9,12 +20,36 @@ width: 250px;
 }
 
 .elder-single-photo img {
-
-width: 100%;
-object-fit: cover;
+  border-radius: 2px;
+  linear-gradient: (rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  width: 100%;
+  object-fit: cover;
 }
 
 .elder-specs-wrapper{
 padding: left;
 flex-grow: 1;
 }
+
+.form-inline {
+  display: inline-box;
+  width: 20px;
+}
+
+.elder-description {
+  font-size: 12px;
+}
+
+.elder-skills{
+  margin-top: 30px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
