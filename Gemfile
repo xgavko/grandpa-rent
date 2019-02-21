@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
+gem "geocoder"
 
 # protection for images
 gem 'dotenv-rails', groups: [:development, :test]
