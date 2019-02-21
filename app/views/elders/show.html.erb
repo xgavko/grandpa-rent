@@ -29,12 +29,8 @@
         </div>
         <div class="form-inline">
           <%= simple_form_for [@elder, @rent] do |f| %>
-          <%= f.input :start_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 2,
-                              order: [:day, :month, :year]%>
-          <%= f.input :end_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 2,
-                              order: [:day, :month, :year] %>
+          <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+          <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
           <%= f.button :submit, {class: "btn btn-primary btn-sm"}%>
         <% end %>
         </div>
