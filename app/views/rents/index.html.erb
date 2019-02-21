@@ -12,12 +12,18 @@
       </div>
       <div class="message-body">
         <h3>
-            <% elder = Elder.find(rent.elder_id) %>
-            <%= elder.full_name %>
-          </h3>
-          <p> Loué de <%= rent.start_date %> à <%= rent.end_date %></p>
+          <% elder = Elder.find(rent.elder_id) %>
+          <%= elder.full_name %>
+        </h3>
+        <p> Loué du <%= rent.start_date %> au <%= rent.end_date %></p>
 
-          <button> <%= link_to "Add a review", new_rent_review_path(rent) %></button>
+        <% today = DateTime.now %>
+        <% if today > rent.end_date && rent.review.nil? %>
+          <%= link_to "Add a review", new_rent_review_path(rent), class: "btn btn-primary" %>
+        <% elsif rent.review.nil? == false %>
+          <p>Your review has been successfully added</p>
+        <% end %>
+
       </div>
       <div class="message-status">
         <% if rent.status.capitalize == 'Declined' %>
