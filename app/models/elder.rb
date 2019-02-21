@@ -12,4 +12,14 @@ class Elder < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def average_rating
+    ratings = []
+    rents.each { |rent| ratings << rent[:rating] if rent[:rating].positive? }
+    if ratings.count.positive?
+      ratings.inject { |sum, el| sum + el }.to_f / ratings.size
+    else
+      ''
+    end
+  end
 end
