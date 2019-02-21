@@ -6,9 +6,12 @@ import "flatpickr/dist/flatpickr.min.css";
 
 import { initSelect2 } from '../plugins/init_select2.js';
 import { initMapbox } from '../plugins/init_mapbox';
-import { changeStatus } from "./rents_status.js";
 import { initFlatpickr } from '../plugins/init_flatpickr';
+import { changeStatus } from 'rents_status';
 
 initMapbox();
 initSelect2();
 initFlatpickr();
+
+
+
