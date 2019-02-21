@@ -17,7 +17,9 @@
 
       <div class="confirmation">
         <div class="message-status">
-            Status: <%= booking.status %>
+            <% if booking.status.capitalize == 'Declined' %>
+              <p class='declined'><%= booking.status %></p>
+            <% end %>
         </div>
         <div class="confirmation-buttons">
           <%= link_to my_rent_confirmeds_path(booking), method: :post, class: "confirmation-btn" do %>
