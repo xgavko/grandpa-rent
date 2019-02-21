@@ -5,14 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 
 import { initSelect2 } from "../plugins/init_select2.js"
 import { initMapbox } from '../plugins/init_mapbox';
-
-initSelect2()
-<<<<<<< HEAD
-
 import { changeStatus } from "./rents_status.js";
-import { disableButtons } from "./rents_status.js";
-=======
+import { disableButtons } from "./disbel_buttons.js";
+
 initMapbox();
+initSelect2();
 
-
->>>>>>> 835ac9b973cc5b4bf2c4e256b862e7a860dcc908

@@ -19,9 +19,9 @@
         <div class="message-status">
             Status: <%= booking.status %>
         </div>
-        <div style="visibility: visible">
+        <div class="confirmation-buttons">
           <%= link_to my_rent_confirmeds_path(booking), method: :post, class: "confirmation-btn" do %>
-            <button class="btn btn-success" value="">Confirm</button>
+            <button class="btn btn-success">Confirm</button>
           <% end %>
           <%= link_to my_rent_declineds_path(booking), method: :post, class: "decline-btn" do %>
             <button class="btn btn-danger" value="">Decline</button>
