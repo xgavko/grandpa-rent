@@ -1,62 +1,63 @@
-<h1>Details: <%=@elder.full_name%></h1>
+<div class="container-show">
+  <div class="elder-single-photo">
+    <% if @elder.photo.file %>
+      <%= cl_image_tag @elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
+    <% else %>
+      <%= image_tag("https://ak4.picdn.net/shutterstock/videos/5431364/thumb/1.jpg?i10c=img.resize(height:150)") %>
+    <% end %>
+  </div>
 
-<div class="content-block">
-  <div class="content-inner">
-    <div class="entry-content elder-content-wrapper">
-      <div class="elder-single-photo">
-        <% if @elder.photo.file %>
-          <%= cl_image_tag @elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
-        <% else %>
-          <%= image_tag("https://ak4.picdn.net/shutterstock/videos/5431364/thumb/1.jpg?i10c=img.resize(height:150)") %>
-        <% end %>
-      </div>
-      <div class="elder-specs-wrapper">
-        <div class="elder-description">
-          <p>Name: <%=  @elder.full_name%><p>
-          <p>Address: <%= @elder.address %></p>
-          <p><%= @elder.description %></p>
+  <div class="elder-specs-wrapper">
 
-        </div>
-        <div class="elder-skills">
-          <h4><%=@elder.full_name%>'s skills and knowledge</h3>
-          <ul class="skills-list">
-            <% @elder.skills.each do |skill| %>
-            <li>
-              <%= skill.name %>
-            </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="form-inline">
-          <%= simple_form_for [@elder, @rent] do |f| %>
-          <%= f.input :start_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 2,
-                              order: [:day, :month, :year]%>
-          <%= f.input :end_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 2,
-                              order: [:day, :month, :year] %>
-          <%= f.button :submit, {class: "btn btn-primary btn-sm"}%>
+    <div class="elder-description">
+      <h3><%= @elder.full_name%><h3>
+      <p><%= @elder.address %></p>
+      <p><%= @elder.description %></p>
+    </div>
+
+    <div class="elder-skills">
+      <p><%=@elder.full_name%>'s skills and knowledge</p>
+      <ul class="skills-list">
+        <% @elder.skills.each do |skill| %>
+          <li>
+            <%= skill.name %>
+          </li>
         <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-inline">
+    <%= simple_form_for [@elder, @rent] do |f| %>
+      <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, {class: "btn btn-primary btn-sm"}%>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-offset-md-3">
+    <div class="message">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzJOZxVrO-feT6NaYjyfyhRrtzVyhPVLq39tnTqhG1uXxDuelvg" alt="" class="avatar">
+
+      <% @elder.rents.each do |rent|%>
+        <div class="message-body">
+          <p> Rented in
+            <%= rent.start_date.strftime("%B")  %> <%= rent.start_date.year %>
+          </p>
+          <p>
+            <%= rent.review %>
+          </p>
         </div>
-      </div>
+        <div class="message-status">
+          <p>
+            <%= '⭐️' * rent.rating %>
+          </p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-<div class="message">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzJOZxVrO-feT6NaYjyfyhRrtzVyhPVLq39tnTqhG1uXxDuelvg" alt="" class="avatar">
-    <% @elder.rents.each do |rent|%>
-    <div class="message-body">
-      <p> Rented in
-        <%= rent.start_date.strftime("%B")  %> <%= rent.start_date.year %>
-      </p>
-      <p>
-        <%= rent.review %>
-      </p>
-    </div>
-      <div class="message-status">
-        <p>
-          <%= '⭐️' * rent.rating %>
-        </p>
-      </div>
-    <% end %>
-</div>
+
