@@ -3,6 +3,15 @@ class EldersController < ApplicationController
 
   def index
     @elders = Elder.all
+
+    @elders = Elder.where.not(latitude: nil, longitude: nil)
+
+    @markers = @elders.map do |elder|
+      {
+        lng: elder.longitude,
+        lat: elder.latitude
+      }
+    end
   end
 
 
