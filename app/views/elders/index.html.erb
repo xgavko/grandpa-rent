@@ -36,7 +36,9 @@
               <div class="card-footer">
                 <ul class="list-inline">
                   <li class="name"> <%= elder.full_name %></li>
-                  <li><%= elder.average_rating %>  ⭐️</li>
+                  <li><%= elder.average_rating %>
+                    <%= elder.average_rating.is_a?(String) ? "" : '⭐️' %>
+                  </li>
                 </ul>
               </div>
           </div>
