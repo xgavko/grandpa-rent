@@ -20,7 +20,9 @@
             </div>
             <div class="text-right">
               <% today = DateTime.now %>
-              <% if today > rent.end_date && rent.review.nil? %>
+              <% if rent.status.downcase == 'declined' || rent.status.downcase == 'pending' %>
+                <% '' %>
+              <% elsif today > rent.end_date && rent.review.nil? %>
                 <%= link_to new_rent_review_path(rent) do %>
                   <i class="fa fa-star" aria-hidden="true"> Add a review! </i>
                 <% end %>
