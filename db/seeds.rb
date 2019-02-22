@@ -91,20 +91,24 @@ elder_skill4.save!
 elder_skill5 = ElderSkill.new(elder: elder4, skill: skill6)
 elder_skill5.save!
 
-d1 = Date.new(2019, 4, 1)
-d2 = Date.new(2019, 4, 5)
+d1 = Date.new(2019, 1, 25)
+d2 = Date.new(2019, 1, 29)
+d3 = Date.new(2019, 2, 3)
+d4 = Date.new(2019, 2, 5)
 
-r1 = Rent.new(start_date: d1, end_date: d2, user: me, elder: elder2, rating: 5, review: 'Très sympa ce vioc')
+r1 = Rent.new(start_date: d1, end_date: d2, user: me, elder: elder2, rating: 5, review: 'Très sympa ce vioc', status: :confirmed)
 r1.save!
-r2 = Rent.new(start_date: d1, end_date: d2, user: u2, elder: elder3, rating: 1, review: 'Une teigne !')
+r2 = Rent.new(start_date: d2, end_date: d4, user: u2, elder: elder3, rating: 1, review: 'Une teigne !', status: :confirmed)
 r2.save!
-r3 = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder1, rating: 3, review: 'Pas mal mais s\'est endormi avant les enfant')
+r3 = Rent.new(start_date: d1, end_date: d3, user: u3, elder: elder1, rating: 3, review: 'Pas mal mais s\'est endormi avant les enfant', status: :confirmed)
 r3.save!
-r4 = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder1, rating: 1, review: 'Une teigne !')
+r4 = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder1, rating: 1, review: 'Une teigne !', status: :confirmed)
 r4.save!
-r5 = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder4, rating: 3, review: 'Pas mal mais s\'est endormi avant les enfant')
+r5 = Rent.new(start_date: d3, end_date: d4, user: u3, elder: elder4, rating: 3, review: 'Pas mal mais s\'est endormi avant les enfant', status: :confirmed)
 r5.save!
-r6 = Rent.new(start_date: d1, end_date: d2, user: u3, elder: elder5, rating: 5, review: 'Très sympa ce vioc')
+r6 = Rent.new(start_date: d1, end_date: d4, user: u3, elder: elder5, rating: 5, review: 'Très sympa ce vioc', status: :declined)
 r6.save!
+r7 = Rent.new(start_date: d2, end_date: d3, user: me, elder: elder6, status: :confirmed)
+r7.save!
 
 puts 'The end'
