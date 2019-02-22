@@ -1,0 +1,22 @@
+<div class="inner-container-reviews">
+  <div class="image">
+    <img src="https://i.kym-cdn.com/photos/images/masonry/000/731/939/d62.jpg" alt="" class="avatar-large">
+  </div>
+
+  <div class="review">
+    <div class="review-details">
+      <h3><strong>Review from</strong> <%= rent.start_date.strftime("%B") %> <%= rent.start_date.year %></h3>
+    </div>
+
+    <div class="rating">
+      <p>
+        <%= '⭐️' * rent.rating %>
+      </p>
+    </div>
+
+    <div class="review-content">
+      <p><%= rent.review %></p>
+    </div>
+
+  </div>
+</div>
