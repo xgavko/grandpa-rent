@@ -1,20 +1,16 @@
-.message {
+.message-rent {
   display: flex;
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 
-.message .message-avatar {
-  padding: 0;
-}
-
-.message .row {
+.message-rent .row {
   height: 115px;
   margin: auto;
 }
 
-.message-name {
+.message-rent-name {
   padding-left: 10px;
   min-width: 100px;
   h3 {
@@ -29,7 +25,11 @@
   };
 }
 
-.message-body {
+.message-rent-body {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  align-items: center;
   font-size: 13px;
   padding-left: 20px;
   color: rgba(0,0,0,0.4);
@@ -38,10 +38,13 @@
   }
 }
 
-.message-status {
+.message-rent-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   font-weight: bold;
-  padding-left: 60px;
+  padding-right: 15px;
 }
 
 .status.accepted {
@@ -56,7 +59,7 @@
   color: lightgrey;
 }
 
-.message .align {
+.message-rent .align {
   display: flex;
   align-items: center;
 }
