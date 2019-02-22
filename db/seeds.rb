@@ -26,55 +26,55 @@ skill7 = Skill.new(name: 'Distinguished drinker')
 skill7.save!
 
 url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550597033/sezjazxi50cb8ekvq9jf.jpg"
-elder1 = Elder.new(full_name: 'Bébère', address: '50 Cours du Médoc, Bordeaux')
+elder1 = Elder.new(full_name: 'Bébère', address: '50 Cours du Médoc, Bordeaux', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder1.user = me
 elder1.remote_photo_url = url
 elder1.save!
 
 url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550666936/ad614ddwypvjsvrontev.jpg"
-elder2 = Elder.new(full_name: 'Nanard', address: '2 Rue Maryse Bastié, Bordeaux')
+elder2 = Elder.new(full_name: 'Nanard', address: '2 Rue Maryse Bastié, Bordeaux', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder2.user = u2
 elder2.remote_photo_url = url
 elder2.save!
 
 url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550670570/Grand_me%CC%80re.jpg"
-elder3 = Elder.new(full_name: 'Bernadette', address: '8 cours de la Martinique, Bordeaux')
+elder3 = Elder.new(full_name: 'Bernadette', address: '8 cours de la Martinique, Bordeaux', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder3.user = u3
 elder3.remote_photo_url = url
 elder3.save!
 
 url = "https://res.cloudinary.com/do8so5e5p/image/upload/v1550593784/51283453ecb388d16f1185ceb6f46922--love-her-i-love.jpg"
-elder4 = Elder.new(full_name: 'Mamie Rose', address: '2 Rue Poyenne, Bordeaux')
+elder4 = Elder.new(full_name: 'Mamie Rose', address: '2 Rue Poyenne, Bordeaux', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder4.user = u3
 elder4.remote_photo_url = url
 elder4.save!
 
 url = 'https://res.cloudinary.com/do8so5e5p/image/upload/v1550675461/tf2ka3y1im3gv2e1qn6q.jpg'
-elder5 = Elder.new(full_name: 'Pépé Maboul', address: '12 Rue de la Sourdière, 75001 Paris')
+elder5 = Elder.new(full_name: 'Pépé Maboul', address: '12 Rue de la Sourdière, 75001 Paris', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder5.user = u4
 elder5.remote_photo_url = url
 elder5.save!
 
 url = 'https://res.cloudinary.com/do8so5e5p/image/upload/v1550767160/gamaniak_personnes-agees-100-ans-05.jpg'
-elder6 = Elder.new(full_name: 'Agecanonix', address: '29 Boulevard du Temple, 75011 Paris')
+elder6 = Elder.new(full_name: 'Agecanonix', address: '29 Boulevard du Temple, 75011 Paris', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder6.user = me
 elder6.remote_photo_url = url
 elder6.save!
 
 url = 'https://res.cloudinary.com/do8so5e5p/image/upload/v1550767160/service_personne_agee.jpg'
-elder7 = Elder.new(full_name: 'Bonne Maman', address: 'Allée Célestin Hennion, 75004 Paris')
+elder7 = Elder.new(full_name: 'Bonne Maman', address: 'Allée Célestin Hennion, 75004 Paris', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder7.user = u3
 elder7.remote_photo_url = url
 elder7.save!
 
 url = 'https://res.cloudinary.com/do8so5e5p/image/upload/v1550767160/321333753-apartar-la-vista-aburrimiento-desesperacion-malhumorado.jpg'
-elder8 = Elder.new(full_name: 'Papy Brossard', address: '11 Rue Dupin, 75006 Paris')
+elder8 = Elder.new(full_name: 'Papy Brossard', address: '11 Rue Dupin, 75006 Paris', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder8.user = u2
 elder8.remote_photo_url = url
 elder8.save!
 
 url = 'https://res.cloudinary.com/do8so5e5p/image/upload/v1550767160/ef94590c-6d92-4190-9eef-3e1fb62a3fbb.jpg'
-elder9 = Elder.new(full_name: 'Saroumane', address: '30 Rue Gay-Lussac, 75005 Paris')
+elder9 = Elder.new(full_name: 'Saroumane', address: '30 Rue Gay-Lussac, 75005 Paris', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio vitae modi labore illum fuga ullam veniam consequatur cumque maiores est tempore nemo sapiente explicabo quia fugit sit corporis officia, maxime.')
 elder9.user = me
 elder9.remote_photo_url = url
 elder9.save!
