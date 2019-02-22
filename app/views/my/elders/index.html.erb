@@ -6,9 +6,9 @@
 </div>
 
 <div class="container">
-  <% @elders.each do |elder| %>
-    <div class="message" >
-      <div class="row align">
+  <div class="row align">
+    <% @elders.each do |elder| %>
+      <div class="message" >
         <div class="col-xs-1 col-sm-1">
           <%= cl_image_tag elder.photo, height: 300, width: 300, crop: :fill , class: "avatar-large"  %>
         </div>
@@ -20,6 +20,7 @@
           <% elder.skills.each do |skill| %>
             <% skills << skill.name %>
           <% end %>
+          <% skills %>
           <p>
             <%= skills.join(', ') %>
           </p>
@@ -29,11 +30,11 @@
             <i class="fa fa-pen" aria-hidden="true"> Edit it </i>
           <% end %>
           <br>
-          <%= link_to my_elders_path, method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"} do  %>
+          <%= link_to my_elder_path(elder), method: :delete, data: { confirm: "Are you certain you want to DESTROY this poor old person?"} do  %>
             <i class="fa fa-trash" aria-hidden="true"> Destroy it </i>
           <% end %>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

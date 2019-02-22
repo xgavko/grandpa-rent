@@ -4,7 +4,7 @@
   <%= f.input :description, label: 'Could be nice to describe this old thing' %>
   <%= f.input :photo, label: 'Add a picture' %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :skills, collection: Skill.all, input_html: {multiple: true, class: 'select2'}, include_hidden: false, label: 'Why should I pick your Elder?' %>
+  <%= f.input :skill_ids, collection: Skill.all, input_html: {multiple: true, class: 'select2'}, include_hidden: false, label: 'Why should I pick your Elder?' %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 
