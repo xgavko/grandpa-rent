@@ -10,7 +10,7 @@
   justify-content: space-between;
   position: fixed;
   width: 100%;
-
+  z-index: 1000;
 }
 
 /* Logo */
@@ -67,7 +67,6 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
-  z-index: 100;
 }
 
 .navbar-wagon-dropdown-menu li > a {
