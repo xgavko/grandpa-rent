@@ -16,13 +16,13 @@
         <div class="elder-specs-wrapper">
 
           <div class="elder-description">
-            <h3><%= @elder.full_name%></h3>
+            <h5><%= @elder.full_name%></h5>
             <p><i class="fas fa-map-marker-alt"></i> <%= @elder.address %></p>
             <p><%= @elder.description %></p>
           </div>
 
           <div class="elder-skills">
-            <h5>Skills</h5>
+            <h3>Skills</h3>
             <ul class="skills-list">
               <% @elder.skills.each do |skill| %>
                 <li>
