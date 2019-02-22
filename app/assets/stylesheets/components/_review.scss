@@ -1,0 +1,43 @@
+.inner-container-reviews {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+
+.image {
+  padding: 0px 20px;
+}
+
+.avatar-large {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.review {
+  margin: 5px 20px;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.review-details {
+  display: flex;
+}
+
+.review-content {
+  padding-left: 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 5px;
+  opacity: 0.6;
+  margin: 4px 0px;
+}
+
+p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+}

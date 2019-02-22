@@ -1,0 +1,22 @@
+<div class="inner-container-reviews">
+  <div class="image">
+    <img src="https://i.pinimg.com/originals/96/e5/9d/96e59d5bd9de9a3d5e510289c7fd64c2.jpg" alt="" class="avatar-large">
+  </div>
+
+  <div class="review">
+    <div class="review-details">
+      <h3>Review from <%= rent.start_date.strftime("%B") %> <%= rent.start_date.year %></h3>
+    </div>
+
+    <div class="rating">
+      <p>
+        <%= '⭐️' * rent.rating %>
+      </p>
+    </div>
+
+    <div class="review-content">
+      <p><%= rent.review %></p>
+    </div>
+
+  </div>
+</div>

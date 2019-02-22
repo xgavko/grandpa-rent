@@ -45,30 +45,11 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6 col-offset-md-3">
-    <div class="message">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVzJOZxVrO-feT6NaYjyfyhRrtzVyhPVLq39tnTqhG1uXxDuelvg" alt="" class="avatar">
+<div class="container-reviews">
+  <h3>Average rate: <%= '⭐️' * Elder.find(params[:id]).average_rating %></h3>
 
-
-
-
-      <% @elder.rents.each do |rent|%>
-        <div class="message-body">
-          <p> Rented in
-            <%= rent.start_date.strftime("%B")  %> <%= rent.start_date.year %>
-          </p>
-          <p>
-            <%= rent.review %>
-          </p>
-        </div>
-        <div class="message-status">
-          <p>
-            <%= '⭐️' * rent.rating %>
-          </p>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <% @elder.rents.each do |rent|%>
+    <%= render 'reviews', rent: rent %>
+  <% end %>
 </div>
 
