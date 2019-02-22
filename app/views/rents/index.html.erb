@@ -21,7 +21,9 @@
             <div class="text-right">
               <% today = DateTime.now %>
               <% if today > rent.end_date && rent.review.nil? %>
-                <%= link_to "Add a review", new_rent_review_path(rent), class: "btn" %>
+                <%= link_to new_rent_review_path(rent) do %>
+                  <i class="fa fa-star" aria-hidden="true"> Add a review! </i>
+                <% end %>
               <% else today > rent.end_date %>
                 <p>Your review has been successfully added</p>
               <% end %>
