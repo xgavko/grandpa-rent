@@ -22,11 +22,11 @@
 
           <div class="card-body">
             <div class="card-tags">
-                <% elder.skills.each do |skill| %>
-                  <div class="card_tag">
-                    <p><%= skill.name %></p>
-                  </div>
-                <% end %>
+              <% elder.skills.each do |skill| %>
+                 <div class="card_tag">
+                  <%= skill.name %>
+                 </div>
+              <% end %>
               </div>
             <%= link_to elder_path(elder) do %>
               <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>);">
