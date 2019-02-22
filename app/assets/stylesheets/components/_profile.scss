@@ -9,10 +9,6 @@
   border-radius: 2px;
 }
 
-.elder-single-photo{
-  width: 250px;
-}
-
 .elder-single-photo img {
   border-radius: 2px;
   linear-gradient: (rgba(0,0,0,0.3), rgba(0,0,0,0.3));
@@ -21,8 +17,8 @@
 }
 
 .elder-specs-wrapper{
-padding: left;
-flex-grow: 1;
+  padding-left: 15px;
+  flex-grow: 1;
 }
 
 .elder-description {
