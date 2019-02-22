@@ -5,7 +5,7 @@
 
   <div class="container">
     <div class="row align">
-      <% @rents.each do |rent| %>
+      <% @rents.reverse_each do |rent| %>
         <% elder = Elder.find(rent.elder_id) %>
         <div class="message-rent" >
           <div class="col-xs-1 col-sm-1">
