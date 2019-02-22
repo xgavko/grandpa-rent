@@ -39,6 +39,8 @@
 
 
 <div class="container-reviews">
+  <h3>Average rate: <%= '⭐️' * Elder.find(params[:id]).average_rating %></h3>
+
   <% @elder.rents.each do |rent|%>
     <%= render 'reviews', rent: rent %>
   <% end %>
