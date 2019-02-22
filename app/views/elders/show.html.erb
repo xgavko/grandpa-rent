@@ -1,42 +1,49 @@
 <div class="container-show">
-  <div class="elder-single-photo">
-    <% if @elder.photo.file %>
-      <%= cl_image_tag @elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
-    <% else %>
-      <%= image_tag("https://ak4.picdn.net/shutterstock/videos/5431364/thumb/1.jpg?i10c=img.resize(height:150)") %>
-    <% end %>
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
 
-  <div class="elder-specs-wrapper">
+        <div class="elder-single-photo">
+          <% if @elder.photo.file %>
+            <%= cl_image_tag @elder.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
+          <% else %>
+            <%= image_tag("https://ak4.picdn.net/shutterstock/videos/5431364/thumb/1.jpg?i10c=img.resize(height:150)") %>
+          <% end %>
+        </div>
+      </div>
 
-    <div class="elder-description">
-      <h3><%= @elder.full_name%><h3>
-      <p><%= @elder.address %></p>
-      <p><%= @elder.description %></p>
-    </div>
+      <div class="col-xs-12 col-sm-7">
+        <div class="elder-specs-wrapper">
 
-    <div class="elder-skills">
-      <p><%=@elder.full_name%>'s skills and knowledge</p>
-      <ul class="skills-list">
-        <% @elder.skills.each do |skill| %>
-          <li>
-            <%= skill.name %>
-          </li>
+          <div class="elder-description">
+            <h3><%= @elder.full_name%></h3>
+            <p><i class="fas fa-map-marker-alt"></i> <%= @elder.address %></p>
+            <p><%= @elder.description %></p>
+          </div>
+
+          <div class="elder-skills">
+            <h5>Skills</h5>
+            <ul class="skills-list">
+              <% @elder.skills.each do |skill| %>
+                <li>
+                  <p><%= skill.name %></p>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-2 booking-form">
+        <%= simple_form_for [@elder, @rent], wrapper_html: { class: "form-group" } do |f| %>
+          <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}  %>
+          <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, {class: "btn btn-primary btn-sm"}%>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
-
-  <div class="form-inline">
-    <%= simple_form_for [@elder, @rent] do |f| %>
-      <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-      <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, {class: "btn btn-primary btn-sm"}%>
-    <% end %>
-  </div>
-
 </div>
-
 
 <div class="container-reviews">
   <h3>Average rate: <%= '⭐️' * Elder.find(params[:id]).average_rating %></h3>
